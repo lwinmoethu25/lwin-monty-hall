@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  lwin-monty-hall-backend:
+    image: lwin-monty-hall-backend
+    build:
+      context: ./LwinMontyHallBackend
+      dockerfile: ./Dockerfile
+    ports:
+      - 5500:5500
+
+  lwin-monty-hall-frontend:
+    image: lwin-monty-hall-frontend
+    build:
+      context: ./LwinMontyHallFrontend
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+
